@@ -158,3 +158,6 @@
  '(magit-item-highlight ((t (:background "gray10"))))
  '(mode-line ((t (:foreground "#333" :background "#bad063" :box nil)))))
 (put 'downcase-region 'disabled nil)
+
+;;Auto-complete
+(ac-config-default)
