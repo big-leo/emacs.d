@@ -161,3 +161,9 @@
 
 ;;Auto-complete
 (ac-config-default)
+
+;;My addon
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;;for c-mode tab size 4
+(setq-default c-basic-offset 4)
