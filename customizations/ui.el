@@ -21,9 +21,11 @@
 ;; for a great explanation of emacs color themes.
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html
 ;; for a more technical explanation.
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(add-to-list 'load-path "~/.emacs.d/themes")
-(load-theme 'tomorrow-night-bright t)
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+;;(add-to-list 'load-path "~/.emacs.d/themes")
+;;(load-theme 'tomorrow-night-bright t)
+(color-theme-monokai)
+
 
 ;; powerline customizes the mode line
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
@@ -42,9 +44,9 @@
 (if (or (equal system-name "DH.local")
         (equal system-name "waffles")) 
     (setq initial-frame-alist '((top . 0) (left . 0)
-                                (width . 177) (height . 53)))
+                                (width . 190) (height . 54)))
   (setq initial-frame-alist '((top . 0) (left . 0)
-                              (width . 177) (height . 52))))
+                              (width . 190) (height . 53))))
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
@@ -77,3 +79,17 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+;; walk in buffers
+(windmove-default-keybindings 'meta)
+
+;; for change buffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(autoload 'ibuffer "ibuffer" "List buffers." t)
+
+;; for slowly scrolling in buffer
+(setq scroll-conservatively 50)
+(setq scroll-margin 4)
+
+;; auto revert buffer
+(global-auto-revert-mode)

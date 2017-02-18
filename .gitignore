@@ -1,3 +1,4 @@
+*~
 .smex-items
 *~$
 places
@@ -12,3 +13,6 @@ archive-contents
 *.dat
 tramp
 session.*
+
+eshell/
+irony/bin/*

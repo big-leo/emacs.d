@@ -83,7 +83,7 @@
     coffee-mode
     scss-mode
     haskell-mode
-    company
+    ;;company
     ack-and-a-half
     ag
     enh-ruby-mode))
@@ -101,7 +101,7 @@
 ;;
 ;; (require 'yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
+;;
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -126,6 +126,7 @@
 ;; These customizations change the way emacs looks and disable/enable
 ;; some user interface elements
 (load "ui.el")
+;;(color-theme-monokai)
 
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
@@ -137,6 +138,7 @@
 (load "elisp-editing.el")
 
 ;; Langauage-specific
+(load "irony.el")
 (load "setup-clojure.el")
 (load "setup-js.el")
 (load "setup-css.el")
@@ -149,13 +151,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(coffee-tab-width 2))
+ '(coffee-tab-width 2)
+ '(ede-project-directories (quote ("/home/bogdan/prog/gcc" "/home/bogdan/prog/gcc/temp/1"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(magit-item-highlight ((t (:background "gray10"))))
+ '(magit-item-highlight ((t (:background "gray10"))) t)
  '(mode-line ((t (:foreground "#333" :background "#bad063" :box nil)))))
 (put 'downcase-region 'disabled nil)
 
@@ -167,3 +170,11 @@
 
 ;;for c-mode tab size 4
 (setq-default c-basic-offset 4)
+
+;;Python PEP8
+;;(require 'python-pep8)
+;;(require 'python-pylint)
+;;(add-to-list 'load-path "~/.emacs.d/elpa/python-pep8-1.1")
+;;(load "python-pep8-autoloads.el")
+(autoload 'python-pep8 "python-pep8")
+(autoload 'pep8 "python-pep8")
