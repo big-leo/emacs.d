@@ -62,3 +62,4 @@
 
 ;; c++11 for clang
 (setq irony-additional-clang-options '("-std=c++11"))
+(setq irony-compile-options '("-std=c++11" "-stdlib=libc++"))
