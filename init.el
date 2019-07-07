@@ -28,6 +28,14 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+
+;; For new version ido-ubiquious
+(defvar ido-cur-item nil)
+(defvar ido-default-item nil)
+(defvar ido-cur-list nil)
+(defvar predicate nil)
+(defvar inherit-input-method nil)
+
 ;; The packages you want installed. You can also install these
 ;; manually with M-x package-install
 ;; Add in your own as you wish:
@@ -152,7 +160,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
- '(ede-project-directories (quote ("/home/bogdan/prog/gcc" "/home/bogdan/prog/gcc/temp/1"))))
+ '(ede-project-directories
+   (quote
+    ("/home/bogdan/prog/gcc" "/home/bogdan/prog/gcc/temp/1")))
+ '(package-selected-packages
+   (quote
+    (ido-ubiquitous yaml-mode tagedit smex scss-mode rainbow-delimiters pyvenv python-pep8 pylint projectile paredit org markdown-mode magit javap-mode irony-eldoc helm-gtags haskell-mode haml-mode flycheck-irony exec-path-from-shell enh-ruby-mode elein dockerfile-mode company-irony color-theme-monokai coffee-mode clojure-snippets clojure-mode-extra-font-locking cider auto-complete ag ack-and-a-half))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
